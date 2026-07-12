@@ -1,3 +1,7 @@
+output "oracle_exadata_infrastructures_id" {
+  description = "Map of id values across all oracle_exadata_infrastructures, keyed the same as var.oracle_exadata_infrastructures"
+  value       = { for k, v in azurerm_oracle_exadata_infrastructure.oracle_exadata_infrastructures : k => v.id }
+}
 output "oracle_exadata_infrastructures_compute_count" {
   description = "Map of compute_count values across all oracle_exadata_infrastructures, keyed the same as var.oracle_exadata_infrastructures"
   value       = { for k, v in azurerm_oracle_exadata_infrastructure.oracle_exadata_infrastructures : k => v.compute_count }
