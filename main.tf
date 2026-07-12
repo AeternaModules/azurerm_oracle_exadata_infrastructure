@@ -15,7 +15,7 @@ resource "azurerm_oracle_exadata_infrastructure" "oracle_exadata_infrastructures
   tags                 = each.value.tags
 
   dynamic "maintenance_window" {
-    for_each = each.value.maintenance_window != null ? [each.value.maintenance_window] : []
+    for_each = each.value.maintenance_window != null ? each.value.maintenance_window : []
     content {
       days_of_week       = maintenance_window.value.days_of_week
       hours_of_day       = maintenance_window.value.hours_of_day

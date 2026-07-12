@@ -38,7 +38,7 @@ EOT
     database_server_type = optional(string)
     storage_server_type  = optional(string)
     tags                 = optional(map(string))
-    maintenance_window = optional(object({
+    maintenance_window = optional(list(object({
       days_of_week       = optional(list(string))
       hours_of_day       = optional(list(number))
       lead_time_in_weeks = optional(number)
@@ -46,7 +46,7 @@ EOT
       patching_mode      = optional(string)
       preference         = optional(string)
       weeks_of_month     = optional(list(number))
-    }))
+    })))
   }))
 }
 
